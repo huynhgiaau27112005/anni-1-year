@@ -749,3 +749,31 @@ body[data-theme="night"], body[data-theme="dusk"], body[data-theme="film"] { --k
 .start-text { font-family: var(--script); font-weight: 700; font-size: clamp(30px, 9vw, 40px); color: #ffe3ea; text-shadow: 0 0 18px rgba(255, 120, 160, .6); }
 .start-hint { font-size: 14px; color: #ffd1dc; opacity: .75; }
 .scene.active .start-hint { animation: rise 1s var(--ease-out) .7s both, floaty 2.4s ease-in-out 1.7s infinite; }
+
+/* ---------- Hướng dẫn mở bằng trình duyệt thật (khi đang ở trong Messenger/Facebook/Zalo) ---------- */
+#iab-guide {
+  position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 24px;
+  background: rgba(30, 6, 18, .72); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  font-family: var(--body); animation: iabIn .5s var(--ease-out) both;
+}
+@keyframes iabIn { from { opacity: 0; } }
+.iab-arrow {
+  position: absolute; top: calc(env(safe-area-inset-top, 0px) + 6px); right: 18px;
+  font-size: 46px; color: #ffd2e0; text-shadow: 0 0 16px rgba(255, 120, 160, .9);
+  animation: iabPoint 1.2s ease-in-out infinite;
+}
+@keyframes iabPoint { 50% { transform: translate(6px, -8px); } }
+.iab-card {
+  width: min(100%, 340px); padding: 26px 22px 18px; border-radius: 22px; text-align: center;
+  background: #fff7f0; color: var(--ink); box-shadow: 0 24px 50px -16px rgba(0, 0, 0, .6);
+}
+.iab-heart { font-size: 46px; line-height: 1; animation: floaty 2.4s ease-in-out infinite; }
+.iab-title { margin-top: 10px; font-family: var(--script); font-weight: 700; font-size: 30px; line-height: 1.15; color: var(--rose-deep); }
+.iab-text { margin-top: 10px; font-size: 15px; line-height: 1.55; }
+.iab-text b { color: var(--rose-deep); }
+.iab-copy, .iab-stay { display: block; width: 100%; border: 0; cursor: pointer; font: inherit; }
+.iab-copy {
+  margin-top: 18px; padding: 12px 14px; border-radius: 999px; font-weight: 700; font-size: 14px; color: #fff;
+  background: linear-gradient(135deg, #ff8fab, #e0577f); box-shadow: 0 10px 22px -10px rgba(224, 87, 127, .8);
+}
+.iab-stay { margin-top: 10px; padding: 8px; background: none; font-size: 13px; color: var(--ink-soft); text-decoration: underline; }
