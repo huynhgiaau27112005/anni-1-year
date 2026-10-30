@@ -1,0 +1,47 @@
+Thứ tự ảnh dồn dập (tạo bởi tools/prepare_photos.py)
+
+01.jpg  2026-03-05 15:47  [exif]  ← 20260305_154701.jpg
+02.jpg  2026-03-08 06:55  [exif]  ← Screenshot_20260308_065536_Instagram.jpg
+03.jpg  không rõ ngày     [ngày sửa file]  ← 7X6VAVNT.jpg
+04.jpg  2026-04-05 19:49  [tên file]  ← Locket_1775393347939_98.jpg
+05.jpg  2026-04-10 13:23  [tên file]  ← 20260410_132340.jpg
+06.jpg  không rõ ngày     [ngày sửa file]  ← a.jpg
+07.jpg  2026-04-10 13:29  [exif]  ← 20260410_132901.jpg
+08.jpg  2026-06-01 08:44  [exif]  ← 20260601_084422.jpg
+09.jpg  không rõ ngày     [ngày sửa file]  ← ac3371c681534dac97f0125d5d0fca0d.webp
+10.jpg  2026-06-27 22:56  [tên file]  ← 20260627_225646.jpg
+11.jpg  2026-07-12 16:51  [exif]  ← 20260712_165138.jpg
+12.jpg  không rõ ngày     [ngày sửa file]  ← Messenger_creation_0BE0AEF8-DCAD-4A05-9BFD-8C371EE14998.jpeg
+13.jpg  2026-07-12 16:57  [exif]  ← 20260712_165731.jpg
+14.jpg  2026-07-12 16:59  [exif]  ← 20260712_165909.jpg
+15.jpg  không rõ ngày     [ngày sửa file]  ← Messenger_creation_5255256A-69E2-4651-B7DD-17B24D899B69.jpeg
+16.jpg  2026-07-18 16:38  [exif]  ← image-1784367528899.jpg
+17.jpg  2026-07-31 20:51  [exif]  ← 20260731_205158.jpg
+18.jpg  không rõ ngày     [ngày sửa file]  ← Messenger_creation_85786DB1-B620-40F9-AF19-B9C7CA541E44.jpeg
+19.jpg  2026-07-31 21:37  [tên file]  ← IMG_20260731_213721.jpg
+20.jpg  2026-09-02 21:42  [tên file]  ← IMG_20260902_214227.jpg
+21.jpg  không rõ ngày     [ngày sửa file]  ← Messenger_creation_E142A0C1-DECA-486F-8958-14718E296DB0.jpeg
+22.jpg  2026-09-02 21:42  [tên file]  ← IMG_20260902_214234.jpg
+23.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214326.jpg
+24.jpg  không rõ ngày     [ngày sửa file]  ← Messenger_creation_F174BBA8-842E-4E8C-856F-5A9D9EA2A87C.jpeg
+25.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214330.jpg
+26.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214338.jpg
+27.jpg  không rõ ngày     [ngày sửa file]  ← moodit-photo.png
+28.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214340.jpg
+29.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214343.jpg
+30.jpg  không rõ ngày     [ngày sửa file]  ← original_1.webp.png
+31.jpg  2026-09-02 21:43  [tên file]  ← IMG_20260902_214344.jpg
+32.jpg  2026-09-03 15:19  [tên file]  ← Locket_1788423589944_71.jpg
+33.jpg  không rõ ngày     [ngày sửa file]  ← original_3.webp.png
+34.jpg  2026-09-05 17:42  [tên file]  ← IMG_UPLOAD_20260905_174207.jpg
+35.jpg  2026-10-20 20:20  [tên file]  ← 1792502403551_100.jpeg
+36.jpg  không rõ ngày     [ngày sửa file]  ← original_5.webp (1).png
+37.jpg  2026-10-20 20:21  [tên file]  ← 1792502469335_100.jpeg
+38.jpg  2026-10-20 20:22  [tên file]  ← 1792502534936_100.jpeg
+39.jpg  không rõ ngày     [ngày sửa file]  ← original_6.webp.png
+40.jpg  2026-10-20 20:22  [tên file]  ← 1792502578916_100.jpeg
+41.jpg  2026-10-20 20:23  [tên file]  ← 1792502622901_100.jpeg
+42.jpg  không rõ ngày     [ngày sửa file]  ← rw8FPShZ.jpg
+43.jpg  2026-10-20 20:25  [tên file]  ← 1792502710703_100.jpeg
+44.jpg  2026-10-20 20:25  [tên file]  ← 1792502732231_100.jpeg
+45.jpg  2026-11-02 00:00  [tự đặt]  ← anh-dung-hinh.jfif

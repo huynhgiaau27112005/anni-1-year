@@ -1,0 +1,3 @@
+# Tự đặt ngày cho ảnh dồn dập (ảnh không có ngày chụp sẽ được rải đều nếu không ghi ở đây)
+# Mỗi dòng: tên-file-gốc = năm-tháng-ngày   (vd: a.jpg = 2025-12-24)
+anh-dung-hinh.jfif = 2026-11-02
