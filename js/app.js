@@ -1193,27 +1193,32 @@
     setTimeout(() => FX.removeHeart(heart), 1200);
   }
 
-  // Nu vừa tới màn nhận quà → gửi email báo Húi qua Web3Forms (Húi tự nhắn mã cho Nu).
-  // Lần nào vào màn quà cũng gửi (kể cả tải lại trang). Xem thử bằng ?from=... thì tiêu đề email có chữ [Thử].
-  function notifyArrival() {
-    const key = CFG.web3formsKey;
-    if (!key) return console.warn("Chưa điền CONFIG.web3formsKey trong js/content.js — không gửi email báo.");
-    const test = new URLSearchParams(location.search).has("from");
-    const time = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh", hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" });
-    fetch("https://api.web3forms.com/submit", {
+  // Báo Húi theo thời gian thực ở màn nhận quà (Húi tự nhắn mã cho Nu): thông báo đẩy về điện thoại qua ntfy.sh (~1 giây)
+  // lúc vào màn quà, lúc BẤM "Nhận mã", lúc mở được quà.
+  // Lần nào cũng gửi (kể cả tải lại trang). Xem thử bằng ?from=... thì tin có chữ [Thử].
+  const IS_TEST = new URLSearchParams(location.search).has("from");
+  const nowVN = () => new Date().toLocaleTimeString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+  function pushPhone(title, message, priority = 3, tags = []) {
+    if (!CFG.ntfyTopic) return;
+    // gửi dạng JSON tới gốc ntfy.sh (không đặt header riêng → không cần preflight CORS, tiếng Việt không bị lỗi)
+    fetch("https://ntfy.sh/", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        access_key: key,
-        subject: `${test ? "[Thử] " : ""}🎁 Nu đã tới màn nhận quà! (${time})`,
-        from_name: "Nu & Húi 💗",
-        message: `Nu vừa vào màn nhận quà lúc ${time}${test ? " (đang xem thử)" : ""}.\n\nGửi mã cho Nu liền đi nè: ${C.gift.code}`,
-      }),
+      body: JSON.stringify({ topic: CFG.ntfyTopic, title: (IS_TEST ? "[Thử] " : "") + title, message, priority, tags }),
       keepalive: true,
-    })
-      .then((res) => res.json())
-      .then((data) => { if (!data.success) console.warn("[notify]", data.message || data.body?.message || data); })
-      .catch((err) => console.warn("[notify]", err));
+    }).catch((err) => console.warn("[ntfy]", err));
+  }
+
+  function notifyArrival() {
+    const t = nowVN();
+    pushPhone("🎁 Nu đã tới màn nhận quà", `Lúc ${t}. Chuẩn bị gửi mã nha: ${C.gift.code}`, 4, ["gift"]);
+  }
+  function notifyCodeRequest() {
+    const t = nowVN();
+    pushPhone("💌 NU VỪA BẤM NHẬN MÃ!", `Lúc ${t}. Gửi mã liền đi: ${C.gift.code}`, 5, ["rotating_light", "love_letter"]);
+  }
+  function notifyOpened() {
+    pushPhone("🎉 Nu đã mở quà rồi!", `Nu nhập đúng mã lúc ${nowVN()}`, 3, ["tada"]);
   }
 
   async function sceneGift() {
@@ -1237,8 +1242,9 @@
     await sleep(400);
     form.classList.add("on");
 
-    // Húi đã được báo qua email từ lúc Nu vào màn này; nút chỉ trấn an Nu đợi tin nhắn
+    // bấm "Nhận mã" → báo ngay về điện thoại Húi (ntfy); nút trấn an Nu đợi tin nhắn
     getBtn.addEventListener("click", () => {
+      notifyCodeRequest();
       getBtn.disabled = true;
       toast(g.sentToast, 4000);
       sticker({ sticker: "kiss", bubble: "đợi xíu nha", dur: 3000 });
@@ -1256,6 +1262,7 @@
       input.addEventListener("keydown", (e) => e.key === "Enter" && check(true));
     });
 
+    notifyOpened();
     input.blur();
     form.style.transition = "opacity .5s, transform .5s";
     form.style.opacity = "0";

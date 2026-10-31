@@ -309,13 +309,13 @@ window.CONTENT = {
 };
 
 /*
- * Email báo Húi: Nu vừa vào màn nhận quà → web gửi email cho Húi qua Web3Forms (kèm mã quà)
- * → Húi tự nhắn mã cho Nu. Chạy thẳng trên GitHub Pages, không cần server hay .env.
+ * Báo Húi ở màn nhận quà → Húi tự nhắn mã cho Nu. Chạy thẳng trên GitHub Pages, không cần server hay .env.
  *
- * web3formsKey: lấy ở https://web3forms.com (nhập email của Húi → key gửi về email đó).
- *   Key này là key công khai, để trong code được: nó chỉ gửi email tới đúng email của Húi.
- *   Để "" thì không gửi email.
+ * ntfyTopic: thông báo đẩy tức thì về điện thoại Húi (~1 giây) qua https://ntfy.sh — miễn phí, không cần tài khoản.
+ *   Cài app "ntfy" (App Store / Google Play) → bấm + → nhập đúng tên topic này → bật thông báo.
+ *   Báo 3 lúc: Nu tới màn quà · Nu BẤM "Nhận mã" (ưu tiên cao nhất, kêu to) · Nu nhập đúng mã mở quà.
+ *   Ai biết tên topic cũng xem được tin, nên tên được đặt ngẫu nhiên khó đoán. Để "" thì tắt.
  */
 window.CONFIG = {
-  web3formsKey: "d1938f0b-b93e-468e-ba5d-127eb0d334a0",
+  ntfyTopic: "nu-hui-ifh56u2d5u9y",
 };

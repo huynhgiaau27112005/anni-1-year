@@ -31,18 +31,17 @@ Mở http://localhost:5577. Nhảy thẳng tới 1 đoạn: `?from=intro | miles
 ## Deploy GitHub Pages
 Push cả thư mục lên repo → Settings → Pages → Branch `main` / root. `index.html` ở gốc.
 
-## Email báo khi Nu tới màn quà
-Nu vừa vào màn "món quà bí mật" → web gửi email tới Húi qua [Web3Forms](https://web3forms.com) (kèm mã `monquabimat`)
-→ Húi tự nhắn mã cho Nu bằng Zalo/Messenger. Nút "Nhận mã" chỉ hiện "Húi đang gửi mã cho Nu nè".
-Chạy thẳng trên GitHub Pages, không cần server.
+## Báo về điện thoại khi Nu ở màn quà (ntfy)
+Web gửi thông báo đẩy tức thì (~1 giây) về điện thoại Húi qua [ntfy.sh](https://ntfy.sh) — miễn phí, không cần tài khoản:
+- 🎁 Nu vừa tới màn nhận quà
+- 💌 **Nu vừa bấm "Nhận mã"** (ưu tiên cao nhất, kêu to) — kèm mã `monquabimat` để gửi liền
+- 🎉 Nu đã nhập đúng mã, mở quà
 
-1. Vào [web3forms.com](https://web3forms.com) → nhập email muốn nhận thông báo → Access Key gửi về email đó.
-2. Dán key vào `web3formsKey` cuối file `js/content.js`, push lên GitHub là xong.
-   (Key này là key công khai, để trong code được: nó chỉ gửi được tới email của bạn.)
-3. Thử: mở web với `?from=gift` → email tới có tiêu đề **[Thử]** 🎁 Nu đã tới màn nhận quà!
+Cài đặt:
+1. Cài app **ntfy** (App Store / Google Play) → bấm **+** → nhập topic ghi ở `ntfyTopic` cuối file `js/content.js` → bật thông báo.
+2. Thử: mở web với `?from=gift` → thông báo có chữ **[Thử]**.
 
-Lần nào vào màn quà cũng gửi email (kể cả tải lại trang). Xem thử bằng `?from=gift` thì tiêu đề có chữ **[Thử]**.
-Gợi ý: bật thông báo Gmail trên điện thoại để nhận ngay; lần đầu nhớ xem cả thư mục Spam.
+Ai biết tên topic cũng xem được tin, nên tên được đặt ngẫu nhiên khó đoán. Muốn đổi thì sửa `ntfyTopic` rồi theo dõi tên mới trong app.
 
 ## Ghi công
 Sticker động lấy từ [Noto Emoji Animation](https://googlefonts.github.io/noto-emoji-animation/) của Google, giấy phép CC BY 4.0.
